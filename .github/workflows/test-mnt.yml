@@ -12,7 +12,7 @@ jobs:
       - run: |
           sudo blkid
       - run: |
-          lsmount
+          TERM=xterm lsmount
       - run: |
           sudo ls -lRa /mnt
           sudo tar -cf - --exclude=swapfile -C /mnt . | dd bs=1M count=128 | zstd > mnt.tar.zst
